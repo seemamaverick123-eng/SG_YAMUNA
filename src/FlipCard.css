@@ -1,0 +1,117 @@
+/* Enable 3D Flip */
+.flip-card {
+  perspective: 1200px;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRONT & BACK STYLES */
+.flip-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden; /* THIS FIXES UPSIDE-DOWN ISSUE */
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* BACK SIDE */
+.flip-back {
+  transform: rotateY(180deg);
+}
+.tumble {
+  opacity: 0;
+  transform: rotate(-15deg) scale(0.8) translateY(20px);
+  animation: tumbleIn 0.6s ease-out forwards;
+}
+
+@keyframes tumbleIn {
+  0% {
+    opacity: 0;
+    transform: rotate(-15deg) scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1) translateY(0);
+  }
+}
+@keyframes type {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.animate-type {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: type 2s steps(30) forwards;
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+/* @keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #0ff; }
+} */
+
+/* Add to your CSS or Tailwind global styles */
+
+/* Triangle card effect */
+.clip-triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* 3D Flip effect */
+.perspective {
+  perspective: 1000px;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.group-hover\:rotate-y-180:hover {
+  transform: rotateY(180deg);
+  transition: transform 0.7s ease-in-out;
+}
+.group:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+  opacity: 0.9;
+}
+
+
+/* Strong 3D Heading */
+
+
+/* Smooth Slide Animations */
+@keyframes slideLeft {
+  0% { opacity: 0; transform: translateX(-60px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.animate-slideLeft { animation: slideLeft 1s ease forwards; }
+
+@keyframes slideRight {
+  0% { opacity: 0; transform: translateX(60px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.animate-slideRight { animation: slideRight 1s ease forwards; }
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-slideUp { animation: slideUp 1s ease forwards; }
