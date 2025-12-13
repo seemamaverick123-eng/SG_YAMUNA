@@ -83,7 +83,7 @@ const Footer = () => {
 
       {/* Bottom copyright */}
       <div className="border-t border-gray-400 mt-8 py-4 text-center text-white text-sm">
-        &copy; {new Date().getFullYear()} Royal Orchid Farms. All Rights Reserved.
+        &copy; {new Date().getFullYear()} Goyard greens Farms. All Rights Reserved.
       </div>
     </footer>
 

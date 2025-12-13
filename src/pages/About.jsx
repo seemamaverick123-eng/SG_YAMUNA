@@ -35,7 +35,7 @@ const About = () => {
         {/* Centered Text */}
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4 sm:px-6">
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-3 text-3d-strong animate-slideRight leading-tight">
-            Royal Orchid Farms – About Us
+            Goyard greens Farms – About Us
           </h1>
           <p className="text-base sm:text-lg md:text-2xl mb-3 tracking-wide font-semibold text-3d animate-slideLeft">
             A perfect venue for celebrations

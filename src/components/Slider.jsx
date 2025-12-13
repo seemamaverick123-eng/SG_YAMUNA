@@ -10,17 +10,17 @@ const slides = [banner1, banner2, banner3];
 const sliderTexts = [
   {
     title: "A perfect venue for your dream weddings, corporate events, and private celebrations.",
-    main: "Celebrate in style at Royal Orchid Farms Noida",
+    main: "Celebrate in style at Goyard greens Farms Noida",
     sub: "Book Your Event Today +91-98111 19203",
   },
   {
     title: "Host unforgettable moments with elegance and comfort.",
-    main: "Experience Luxury at Royal Orchid Farms",
+    main: "Experience Luxury at Goyard greens Farms",
     sub: "Contact us now +91-98111 19203",
   },
   {
     title: "Your ideal destination for private parties and corporate gatherings.",
-    main: "Event Memorable at Royal Orchid Farms",
+    main: "Event Memorable at Goyard greens Farms",
     sub: "Reserve Your Spot +91-98111 19203",
   },
 ];

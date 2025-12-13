@@ -84,16 +84,16 @@ const Home = () => {
   }, []);
 
   const cards = [
-    { title: "Grand Weddings", img: front1, back: "Royal Orchid Farms suitable for 300+ guests, luxury arrangements, open garden décor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc." },
-    { title: "Grand Weddings", img: front2, back: "Royal Orchid Farms suitable for 300+ guests, luxury arrangements, open garden décor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc.." },
+    { title: "Grand Weddings", img: front1, back: "Goyard greens Farms suitable for 300+ guests, luxury arrangements, open garden décor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc." },
+    { title: "Grand Weddings", img: front2, back: "Goyard greens Farms suitable for 300+ guests, luxury arrangements, open garden décor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc.." },
     { title: "Birthday Parties", img: front3, back: "Kids & adult birthday themes, music setup, decoration, and open area celebration. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc." },
-    { title: "Grand Weddings", img: front4, back: "Royal Orchid Farms suitable for 300+ guests, luxury arrangements, open garden décor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc." },
-    { title: "Grand Weddings", img: front5, back: "Royal Orchid Farms suitable for 300+ guests, luxury arrangements, open garden décor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc." },
+    { title: "Grand Weddings", img: front4, back: "Goyard greens Farms suitable for 300+ guests, luxury arrangements, open garden décor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc." },
+    { title: "Grand Weddings", img: front5, back: "Goyard greens Farms suitable for 300+ guests, luxury arrangements, open garden décor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc." },
     { title: "Birthday Parties", img: front6, back: "Kids & adult birthday themes, music setup, decoration, and open area celebration. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc." },
   ];
 
   const testimonials = [
-    { name: "Amit Sharma", role: "CEO, Sharma Enterprises", img: client1, quote: "Royal Orchid Farms transformed our wedding into a magical experience — the venue, décor, and hospitality exceeded all expectations. Guests couldn’t stop praising the ambience and service." },
+    { name: "Amit Sharma", role: "CEO, Sharma Enterprises", img: client1, quote: "Goyard greens Farms transformed our wedding into a magical experience — the venue, décor, and hospitality exceeded all expectations. Guests couldn’t stop praising the ambience and service." },
     { name: "Priya Singh", role: "Marketing Head, Bright Events", img: client2, quote: "From engagement parties to birthday celebrations, the team handled everything with professionalism and care. The open‑garden décor and lighting made our event truly memorable." },
     { name: "Rohan Verma", role: "Freelancer", img: client3, quote: "Impeccable arrangements and warm hospitality. The food, lighting and overall vibe made our family function feel luxurious yet comfortable. Highly recommend for any celebration." },
   ];
@@ -106,17 +106,17 @@ const Home = () => {
       <SlideOnScroll direction="up">
         <section className="max-w-7xl mx-auto py-20 px-6 flex flex-col md:flex-row items-center gap-10">
           <div className="w-full md:w-1/2">
-            <img src={farmImg} alt="Royal Orchid Farms" className="w-full h-[400px] object-cover rounded-lg shadow-lg" />
+            <img src={farmImg} alt="Goyard greens Farms" className="w-full h-[400px] object-cover rounded-lg shadow-lg" />
           </div>
           <div className="w-full md:w-1/2">
             <h2 className="text-3xl md:text-5xl font-extrabold text-purple-200 mb-6 text-3d-strong animate-slideRight leading-tight">
-              Royal Orchid Farms
+              Goyard greens Farms
             </h2>
             <div className="text-md leading-relaxed text-justify space-y-4">
               <p className="font-semibold text-xl text-black">Where Luxury Meets Serenity</p>
               <p className="text-black animate-slideRightTop">
                 <span className="text-5xl font-bold text-blue-100 animate-neonBlue inline-block mr-1">N</span>
-                estled in the heart of Noida, Royal Orchid Farms offers a seamless blend of timeless charm and modern luxury.
+                estled in the heart of Noida, Goyard greens Farms offers a seamless blend of timeless charm and modern luxury.
               </p>
               <p className="text-black">Our venue offers the perfect balance of nature's beauty and state-of-the-art amenities, ensuring a memorable experience for all.</p>
             </div>
