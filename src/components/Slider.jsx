@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import banner3 from "../assets/pool3.png"
 import banner1 from "../assets/gif1.gif";
 import banner2 from "../assets/gif2.gif";
-import banner3 from "../assets/abc1.webp";
+
 import leftIcon from "../assets/slider1.png";
 import rightIcon from "../assets/slider2.png";
 
@@ -54,7 +55,13 @@ const Slider = () => {
 
           {/* TEXT CENTER */}
           <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center text-white px-3 md:px-6">
-
+            <h1
+              className={`text-xl md:text-5xl font-bold mb-2 md:mb-4 leading-snug
+              ${index === current ? "animate-slideRight" : "opacity-0"}
+              `}
+            >
+              {sliderTexts[index].main}
+            </h1>
             {/* Line 1 – Left Slide */}
             <p
               className={`text-sm md:text-2xl mb-2 md:mb-4 tracking-wide font-medium
@@ -65,13 +72,7 @@ const Slider = () => {
             </p>
 
             {/* Line 2 – Right Slide */}
-            <h1
-              className={`text-xl md:text-5xl font-bold mb-2 md:mb-4 leading-snug
-              ${index === current ? "animate-slideRight" : "opacity-0"}
-              `}
-            >
-              {sliderTexts[index].main}
-            </h1>
+
 
             {/* Line 3 – Bottom Slide */}
             <p
