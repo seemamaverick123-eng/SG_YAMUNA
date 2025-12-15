@@ -34,7 +34,19 @@ const Footer = () => {
           </p>
           <p className="text-white"   >Farm House Two
           </p>
-          <p className="text-white">Farm House Three</p>        </div>
+          <p className="text-white">Farm House Three</p>     
+        
+         
+          <br></br>
+          <button className="border border-white text-white mt-5  px-6 py-3 rounded-lg">
+            Call Now
+          </button>
+            <br></br>
+           <button className="border border-white text-white mt-5  px-4 py-3 rounded-lg">
+            WhatsApp
+          </button>
+       
+             </div>
 
         {/* Quick Links */}
         <div className="flex-1 text-white">

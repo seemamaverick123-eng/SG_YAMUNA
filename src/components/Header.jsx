@@ -47,34 +47,42 @@ const Header = () => {
           </div>
 
           {/* Party Types Desktop */}
-          <div className="relative group">
-            <button className="hover:text-pink-400 transition">Party Types</button>
+         <div className="relative group">
+  {/* MAIN LINK */}
+  <Link
+    to="/party"
+    className="hover:text-pink-400 transition"
+  >
+    Party Types
+  </Link>
 
-            <div className="
-              absolute left-0 mt-3 w-60 bg-white/70 backdrop-blur-xl
-              shadow-xl rounded-xl border border-white/40
-              opacity-0 invisible group-hover:opacity-100 group-hover:visible
-              transition-all duration-300 translate-y-3 group-hover:translate-y-0
-            ">
-              <ul className="flex flex-col">
-                {[
-                  "Birthday Party", "Anniversary", "Corporate Event",
-                  "Wedding Ceremony", "Pool Party", "Kitty Party",
-                  "Bachelor Party", "Family Gathering", "Pre-Wedding Shoot",
-                  "Romantic Setup"
-                ].map((item, i) => (
-                  <li key={i}>
-                    <Link
-                      to={`/party/${item.toLowerCase().replace(/ /g, "-")}`}
-                      className="block px-5 py-1 text-gray-700 hover:bg-pink-500 hover:text-white transition"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+  {/* DROPDOWN */}
+  <div
+    className="
+      absolute left-0 mt-3 w-60 bg-white/70 backdrop-blur-xl
+      shadow-xl rounded-xl border border-white/40
+      opacity-0 invisible group-hover:opacity-100 group-hover:visible
+      transition-all duration-300 translate-y-3 group-hover:translate-y-0
+    "
+  >
+    <ul className="flex flex-col">
+      {[
+        "Birthday Party", "Anniversary", "Corporate Event",
+        "Wedding Ceremony", "Pool Party", "Kitty Party",
+        "Bachelor Party", "Family Gathering", "Pre-Wedding Shoot",
+        "Romantic Setup"
+      ].map((item, i) => (
+        <li
+          key={i}
+          className="px-5 py-2 text-gray-700 hover:bg-pink-500 hover:text-white transition cursor-default"
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
 
           <Link to="/gallery" className="hover:text-pink-400 transition">Gallery</Link>
           <Link to="/contact" className="hover:text-pink-400 transition">Contact Us</Link>
