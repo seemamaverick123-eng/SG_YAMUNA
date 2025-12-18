@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import banner3 from "../assets/pool3.png"
-import banner1 from "../assets/gif1.gif";
-import banner2 from "../assets/gif2.gif";
+import banner3 from "../assets/buddy.jpg"
+import banner1 from "../assets/deco.jpg";
+import banner2 from "../assets/dd1.jpg";
 
 import leftIcon from "../assets/slider1.png";
 import rightIcon from "../assets/slider2.png";

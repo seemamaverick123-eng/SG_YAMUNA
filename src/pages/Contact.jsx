@@ -149,8 +149,7 @@ const ContactPage = () => {
                      border border-white/20 rounded-3xl shadow-2xl p-8"
         >
           <h2 className="text-3xl font-light text-white text-center mb-2">
-            Venue Booking
-          </h2>
+            Contact Us          </h2>
           <p className="text-gray-300 text-center mb-6">
             Elegant • Silent • Professional
           </p>

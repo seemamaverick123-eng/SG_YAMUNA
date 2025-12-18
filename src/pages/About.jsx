@@ -10,7 +10,7 @@ const About = () => {
     { icon: <FaUtensils />, title: "Modern Kitchen", desc: "Fully equipped modular kitchen." },
     { icon: <FaShower />, title: "4 Washrooms", desc: "Hygienic & modern washrooms." },
     { icon: <FaSwimmingPool />, title: "Private Pool", desc: "Clean, refreshing private pool." },
-    { icon: <FaHome />, title: "Building Exterior", desc: "Beautifully designed architecture." },
+    { icon: <FaHome />, title: "Farms Exterior", desc: "Beautifully designed architecture." },
     { icon: <FaParking />, title: "Car Parking", desc: "Safe & spacious parking area." },
     { icon: <FaBolt />, title: "Power Backup", desc: "24×7 uninterrupted electricity." },
     { icon: <FaVideo />, title: "CCTV Security", desc: "Complete surveillance for safety." },
