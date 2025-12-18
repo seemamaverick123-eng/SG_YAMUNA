@@ -24,12 +24,12 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-xl z-50 shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between py-2 px-3">
 
-        {/* Logo - Left */}
+        {/* Logo */}
         <div className="flex-shrink-0">
           <img src={logo} alt="Logo" className="h-20 w-auto" />
         </div>
 
-        {/* Menu - Center */}
+        {/* Desktop Menu */}
         <nav className="hidden md:flex flex-1 justify-center items-center space-x-8 text-lg text-black">
 
           <Link to="/" className="hover:text-pink-400 transition">Home</Link>
@@ -37,36 +37,31 @@ const Header = () => {
 
           {/* Farms Collection */}
           <div className="relative group">
-            <Link to="/collection" className="hover:text-pink-400 transition hover:underline">
+            <Link to="/collection" className="hover:text-pink-400 transition">
               Farms Collection
             </Link>
+
             <div className="absolute left-0 mt-3 w-60 bg-white/30 backdrop-blur-xl shadow-xl rounded-xl border border-white/40
               opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 translate-y-3 group-hover:translate-y-0">
-              <ul className="flex flex-col">
-                <li>
-                  <Link to="/farmhouse-one" className="block px-5 py-2 hover:bg-pink-500 hover:text-white transition">Farmhouse One</Link>
-                </li>
-                <li>
-                  <Link to="/farmhouse-two" className="block px-5 py-2 hover:bg-pink-500 hover:text-white transition">Farmhouse Two</Link>
-                </li>
-                <li>
-                  <Link to="/farmhouse-three" className="block px-5 py-2 hover:bg-pink-500 hover:text-white transition">Farmhouse Three</Link>
-                </li>
+              <ul>
+                <Link to="/farmhouse-one" className="block px-5 py-2 hover:bg-pink-500 hover:text-white">Farmhouse One</Link>
+                <Link to="/farmhouse-two" className="block px-5 py-2 hover:bg-pink-500 hover:text-white">Farmhouse Two</Link>
+                <Link to="/farmhouse-three" className="block px-5 py-2 hover:bg-pink-500 hover:text-white">Farmhouse Three</Link>
               </ul>
             </div>
           </div>
 
-          {/* Party Types with Yellow underline */}
+          {/* Party Types */}
           <div className="relative group">
-            <span className="cursor-pointer relative hover:text-pink-400 transition">
+            <Link to="/party" className="hover:text-pink-400 transition">
               Party Types
-              <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-yellow-400 transition-all duration-[4000ms] group-hover:w-full"></span>
-            </span>
+            </Link>
+
             <div className="absolute left-0 mt-3 w-72 bg-white/30 backdrop-blur-xl shadow-xl rounded-xl border border-white/40
               opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 translate-y-3 group-hover:translate-y-0">
-              <ul className="flex flex-col">
+              <ul>
                 {partyOptions.map((item, i) => (
-                  <li key={i} className="px-5 py-2 text-gray-700 hover:bg-pink-500 hover:text-white transition cursor-pointer">
+                  <li key={i} className="px-5 py-2 text-gray-700 hover:bg-pink-500 hover:text-white cursor-pointer">
                     {item}
                   </li>
                 ))}
@@ -77,26 +72,36 @@ const Header = () => {
           <Link to="/contact" className="hover:text-pink-400 transition">Contact Us</Link>
         </nav>
 
-        {/* Book Now button - Right */}
-        <div className="hidden md:block flex-shrink-0">
-          <button className="px-5 py-2 border text-black rounded-lg hover:bg-pink-400 hover:text-white transition">
+        {/* Book Now */}
+        <div className="hidden md:block">
+          <Link
+            to="/contact"
+            className="px-5 py-2 border rounded-lg hover:bg-pink-400 hover:text-white transition"
+          >
             Book Now
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Hamburger */}
-        <button className="md:hidden text-3xl ml-3" onClick={() => setMobileMenu(!mobileMenu)}>
+        <button
+          className="md:hidden text-3xl ml-3"
+          onClick={() => setMobileMenu(!mobileMenu)}
+        >
           ☰
         </button>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenu && (
-        <div className="md:hidden bg-white shadow-xl p-4">
-          <Link to="/" className="block py-2">Home</Link>
-          <Link to="/about" className="block py-2">About</Link>
+        <div className="md:hidden bg-white shadow-xl p-4 space-y-2">
+          <Link to="/" className="block py-2" onClick={() => setMobileMenu(false)}>Home</Link>
+          <Link to="/about" className="block py-2" onClick={() => setMobileMenu(false)}>About</Link>
 
-          <button onClick={() => setOpenCollection(!openCollection)} className="block py-2">Farms Collection ▼</button>
+          {/* Mobile Collection */}
+          <button onClick={() => setOpenCollection(!openCollection)} className="block py-2 w-full text-left">
+            Farms Collection ▼
+          </button>
+
           {openCollection && (
             <div className="pl-4">
               <Link to="/farmhouse-one" className="block py-1">Farmhouse One</Link>
@@ -105,19 +110,38 @@ const Header = () => {
             </div>
           )}
 
-          <button onClick={() => setOpenParty(!openParty)} className="block py-2">Party Types ▼</button>
+          {/* Mobile Party Types */}
+          <button onClick={() => setOpenParty(!openParty)} className="block py-2 w-full text-left">
+            Party Types ▼
+          </button>
+
           {openParty && (
             <div className="pl-4">
-              {partyOptions.map((item,i) => (
-                <span key={i} className="block py-1">{item}</span>
+              <Link
+                to="/party"
+                className="block py-1 font-semibold text-pink-500"
+                onClick={() => setMobileMenu(false)}
+              >
+                All Party Types
+              </Link>
+
+              {partyOptions.map((item, i) => (
+                <span key={i} className="block py-1 text-sm text-gray-600">
+                  {item}
+                </span>
               ))}
             </div>
           )}
 
-          <Link to="/contact" className="block py-2">Contact</Link>
-          <button className="mt-3 px-5 py-2 border rounded-lg hover:bg-pink-400 hover:text-white transition">
+          <Link to="/contact" className="block py-2" onClick={() => setMobileMenu(false)}>Contact</Link>
+
+          <Link
+            to="/contact"
+            className="block mt-3 px-5 py-2 border rounded-lg text-center hover:bg-pink-400 hover:text-white transition"
+            onClick={() => setMobileMenu(false)}
+          >
             Book Now
-          </button>
+          </Link>
         </div>
       )}
     </header>
