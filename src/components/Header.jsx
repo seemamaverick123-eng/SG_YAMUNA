@@ -26,19 +26,19 @@ const Header = () => {
 
         {/* Logo */}
         <div className="flex-shrink-0">
-          <img src={logo} alt="Logo" className="h-20 w-auto" />
+          <img src={logo} alt="Logo" className="h-24 w-auto" />
         </div>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex flex-1 justify-center items-center space-x-8 text-lg text-black">
 
           <Link to="/" className="hover:text-pink-400 transition">Home</Link>
-          <Link to="/about" className="hover:text-pink-400 transition">About</Link>
+          {/* <Link to="/about" className="hover:text-pink-400 transition">About</Link> */}
 
           {/* Farms Collection */}
-          <div className="relative group">
+          {/* <div className="relative group">
             <Link to="/collection" className="hover:text-pink-400 transition">
-              Farms Collection
+           Our Farms
             </Link>
 
             <div className="absolute left-0 mt-3 w-60 bg-white/30 backdrop-blur-xl shadow-xl rounded-xl border border-white/40
@@ -49,7 +49,7 @@ const Header = () => {
                 <Link to="/farmhouse-three" className="block px-5 py-2 hover:bg-pink-500 hover:text-white">Farmhouse Three</Link>
               </ul>
             </div>
-          </div>
+          </div> */}
 
           {/* Party Types */}
           <div className="relative group">

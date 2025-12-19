@@ -39,7 +39,7 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div className="flex-1 text-white">
+        {/* <div className="flex-1 text-white">
           <h3 className="font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2">
             <Link to="/" className="hover:text-blue-400 transition block">Home</Link>
@@ -48,7 +48,7 @@ const Footer = () => {
             <Link to="/party" className="hover:text-blue-400 transition block">Party Types</Link>
             <Link to="/contact" className="hover:text-blue-400 transition block">Contact Us</Link>
           </ul>
-        </div>
+        </div> */}
 
         {/* Party Types */}
         <div className="flex-1 text-white">

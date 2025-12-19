@@ -18,9 +18,10 @@ import attractions4 from "../assets/gaurden1.jpg";
 import ikonTempleImg from "../assets/temple.webp";
 import nearestMetroImg from "../assets/okla.jpg";
 import nearestMetroImg1 from "../assets/botanical.jpg";
-
+import { FaBed, FaCouch, FaWifi, FaParking, FaSwimmingPool, FaVideo, FaBolt, FaShower, FaCogs, FaLeaf, FaVolumeUp, FaUtensils, FaPaintBrush, FaHome } from "react-icons/fa";
+import { MdOutlineWaterDrop, MdOutlineCelebration } from "react-icons/md";
 import "../FlipCard.css";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 
 // SlideOnScroll component
 const SlideOnScroll = ({ children, direction = "up", delay = 0 }) => {
@@ -97,38 +98,66 @@ const Home = () => {
     { name: "Priya Singh", role: "Marketing Head, Bright Events", img: client2, quote: "From engagement parties to birthday celebrations, the team handled everything with professionalism and care. The open‑garden décor and lighting made our event truly memorable." },
     { name: "Rohan Verma", role: "Freelancer", img: client3, quote: "Impeccable arrangements and warm hospitality. The food, lighting and overall vibe made our family function feel luxurious yet comfortable. Highly recommend for any celebration." },
   ];
+  const features = [
+    { icon: <FaCouch />, title: "Living Room", desc: "Spacious, furnished luxury living area." },
+    { icon: <FaBed />, title: "4 Bedrooms", desc: "Comfortable, private & premium rooms." },
+    { icon: <FaUtensils />, title: "Modern Kitchen", desc: "Fully equipped modular kitchen." },
+    { icon: <FaShower />, title: "4 Washrooms", desc: "Hygienic & modern washrooms." },
+    { icon: <FaSwimmingPool />, title: "Private Pool", desc: "Clean, refreshing private pool." },
+    { icon: <FaHome />, title: "Farms Exterior", desc: "Beautifully designed architecture." },
+    { icon: <FaParking />, title: "Car Parking", desc: "Safe & spacious parking area." },
+    { icon: <FaBolt />, title: "Power Backup", desc: "24×7 uninterrupted electricity." },
+    { icon: <FaVideo />, title: "CCTV Security", desc: "Complete surveillance for safety." },
+    { icon: <MdOutlineWaterDrop />, title: "Water Supply", desc: "Fresh water available 24×7." },
+    { icon: <FaLeaf />, title: "Garden", desc: "Green & peaceful outdoor area." },
+    { icon: <MdOutlineCelebration />, title: "Party Space", desc: "Outdoor sitting for events." },
+    { icon: <FaPaintBrush />, title: "Decoration Gallery", desc: "Themes available for events." },
+    { icon: <FaWifi />, title: "High-Speed WiFi", desc: "Fast & stable internet access." },
+    { icon: <FaVolumeUp />, title: "Sound System", desc: "Bluetooth speakers & audio setup." }
+  ];
 
   return (
     <div className="overflow-x-hidden"> {/* Main container to prevent horizontal scroll */}
       <Slider />
 
       {/* Hero Section */}
-      <SlideOnScroll direction="up">
-        <section className="max-w-7xl mx-auto py-20 px-6 flex flex-col md:flex-row items-center gap-10">
-          <div className="w-full md:w-1/2">
-            <img src={farmImg} alt="Goyard greens Farms" className="w-full h-[400px] object-cover rounded-lg shadow-lg" />
-          </div>
-          <div className="w-full md:w-1/2">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-purple-200 mb-6 text-3d-strong animate-slideRight leading-tight">
-              Goyard greens Farms
-            </h2>
-            <div className="text-md leading-relaxed text-justify space-y-4">
-              <p className="font-semibold text-xl text-black">Where Luxury Meets Serenity</p>
-              <p className="text-black animate-slideRightTop">
-                <span className="text-5xl font-bold text-blue-100 animate-neonBlue inline-block mr-1">N</span>
-                estled in the heart of Noida, Goyard greens Farms offers a seamless blend of timeless charm and modern luxury.
-              </p>
-              <p className="text-black">Our venue offers the perfect balance of nature's beauty and state-of-the-art amenities, ensuring a memorable experience for all.</p>
+      {/* <SlideOnScroll direction="up">
+        
+      </SlideOnScroll> */}
+        <div className="w-full py-16 bg-white text-gray-900 flex flex-col items-center px-4 sm:px-6 max-w-7xl mx-auto">
+        <h2 className=" text-3d-strong animate-slideRight  tracking-wide font-semibold text-3d animate-slideUp text-xl text-black sm:text-3xl md:text-5xl font-extrabold mb-8 sm:mb-10 text-center tracking-wide animate-topSlide animate-slideRight leading-tight">
+          Our Premium<span className="text-red-600"> Farmhouse Amenities</span>  
+        </h2>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 w-full tracking-wide animate-topSlide">
+          {features.map((item, index) => (
+            <div
+              key={index}
+              className="group p-6 rounded-2xl bg-white shadow-lg border border-gray-200 hover:border-purple-500 hover:scale-[1.05] transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden"
+            >
+              <div className="text-4xl mb-3 text-purple-400 group-hover:rotate-6 transition-transform">
+                {item.icon}
+              </div>
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 group-hover:animate-textDrift">{item.title}</h3>
+              <p className="text-sm sm:text-base opacity-80 group-hover:animate-textDrift">{item.desc}</p>
             </div>
-          </div>
-        </section>
-      </SlideOnScroll>
+          ))}
+        </div>
+
+        {/* <div className="mt-12 text-center max-w-xl">
+          <h3 className="text-2xl lg:text-4xl text-pink-500 sm:text-2xl font-bold mb-4 text-purple-400 tracking-wide animate-topSlide tracking-wide font-semibold text-3d animate-slideUp">Decoration Services</h3>
+          <p className="text-base sm:text-lg opacity-90 ">
+            Premium decoration available at additional charges. Wedding, birthday, anniversary, poolside and all event themes available on request.
+          </p>
+        </div> */}
+
+      </div>
 
       {/* Nearby Attractions */}
       <section className="py-14 px-4 md:px-10 lg:px-20 bg-gray-50">
         <SlideOnScroll>
-          <h2 className="text-3xl md:text-5xl text-center text-purple-200 font-extrabold mb-3 text-3d-strong animate-slideRight leading-tight">
-            Nearby Attractions (Sector 126 Noida)
+          <h2 className="text-3xl md:text-5xl text-center text-black font-extrabold mb-3 text-3d-strong animate-slideRight leading-tight">
+            Nearby Attractions<span className="text-red-600 "> (Sector 126 Noida)</span> 
           </h2>
           <p className="text-center text-gray-600 mb-10">Popular places near Sector 126, Noida (5 to 10 minutes away)</p>
         </SlideOnScroll>
@@ -157,8 +186,8 @@ const Home = () => {
 
       {/* Flip Cards Section */}
       <section className="w-full bg-white py-12">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-purple-200 mb-8 text-center text-3d-strong animate-slideRight leading-tight">
-          Celebration Highlights
+        <h2 className="text-3xl md:text-5xl font-extrabold text-black mb-8 text-center font-extrabold mb-3 text-3d-strong animate-slideRight leading-tight text-black animate-slideRight leading-tight">
+          Celebration <span className="text-red-500">Highlights</span>
         </h2>
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-6">
           {cards.map((card, i) => (
@@ -185,8 +214,8 @@ const Home = () => {
 
       {/* Client Testimonials */}
       <section className="w-full bg-gray-50 py-16">
-        <h2 className="text-3xl md:text-5xl font-extrabold mb-3 text-purple-200 text-center text-3d-strong animate-slideRight leading-tight">
-          Client Testimonials
+        <h2 className="text-3xl md:text-5xl font-extrabold mb-3 text-black text-center text-3d-strong animate-slideRight leading-tight">
+          Client<span className="text-red-600"> Testimonials</span> 
         </h2>
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4 mt-8">
           {testimonials.map((t, idx) => (
@@ -203,7 +232,7 @@ const Home = () => {
       </section>
 
 
-      <style>{`
+  <style>{`
         @keyframes slideLeft {0% {opacity:0; transform:translateX(-50px);} 100% {opacity:1; transform:translateX(0);} }
         .animate-slideLeft {animation: slideLeft 1s ease forwards;}
         @keyframes slideRight {0% {opacity:0; transform:translateX(50px);} 100% {opacity:1; transform:translateX(0);} }
@@ -215,10 +244,14 @@ const Home = () => {
         @keyframes cardSlide {0% {opacity:0; transform:translateY(30px);} 100% {opacity:1; transform:translateY(0);} }
         .animate-cardSlide {animation: cardSlide .9s ease forwards;}
 
-        @keyframes textDrift {0%, 100% {transform: translateY(0);} 50% {transform: translateY(-5px);}}
+        @keyframes textDrift {
+          0%, 100% {transform: translateY(0);} 
+          50% {transform: translateY(-5px);}
+        }
         .animate-textDrift {animation: textDrift 1.5s ease-in-out infinite;}
-        .text-3d {text-shadow:2px 2px 5px rgba(222, 205, 205, 0.9);}
-        .text-3d-strong {text-shadow:3px 3px 8px rgba(93, 74, 74, 1),0px 0px 12px rgba(247, 238, 238, 0.99);}
+
+ 
+        .text-3d-strong {text-shadow:3px 3px 8px rgba(105, 98, 98, 1),0px 0px 12px rgba(255,255,255,0.4);}
       `}</style>
     </div>
   );

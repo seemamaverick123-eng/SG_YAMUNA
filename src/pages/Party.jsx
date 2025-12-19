@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { motion } from "framer-motion";
+
+// Images
 import partyImg from "../assets/dd.jpg";
 import img1 from "../assets/ch.jpg";
 import img2 from "../assets/chrise.webp";
@@ -9,8 +13,15 @@ import img6 from "../assets/hy.jpg";
 import img7 from "../assets/hyy1.gif";
 import img8 from "../assets/ch.jpg";
 
+// Components & Redux
+import FarmCard from "../components/FarmCard";
+import { setCategory } from "../redux/farmSlice";
+
 const Party = () => {
-  const [activeOffer, setActiveOffer] = useState(0);
+  const dispatch = useDispatch();
+  const { farms, category } = useSelector((state) => state.farm);
+
+  const [modalImg, setModalImg] = useState(null);
   const [scatter, setScatter] = useState(false);
 
   const offers = [
@@ -26,18 +37,10 @@ const Party = () => {
 
   const bells = [img1, img2, img3, img4, img5, img6, img7, img8];
 
-  // LEFT & RIGHT – CENTER SAFE POSITIONS
-  const positions = [
-    { x: -600, y: 100 },
-    { x: -520, y: 220 },
-    { x: -650, y: 300 },
-    { x: -480, y: 180 },
-
-    { x: 600, y: 100 },
-    { x: 520, y: 220 },
-    { x: 650, y: 300 },
-    { x: 480, y: 180 },
-  ];
+  const filteredFarms =
+    category === "All"
+      ? farms.slice(0, 9)
+      : farms.filter((farm) => farm.category === category);
 
   useEffect(() => {
     const timer = setTimeout(() => setScatter(true), 10000);
@@ -45,122 +48,107 @@ const Party = () => {
   }, []);
 
   return (
-    <div className="w-full bg-gray-50">
+    <div className="w-full bg-gray-50 mb-5">
 
       {/* HERO */}
-      <div className="relative w-full h-[500px] sm:h-[650px] lg:h-[750px]">
-        <img src={partyImg} className="w-full h-full object-cover" alt="Party" />
-        <div className="absolute inset-0 bg-black/30" />
+      <div className="relative w-full h-[500px] sm:h-[650px] lg:h-[750px] ">
+        <img src={partyImg} alt="Party" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-black/40" />
+
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
-          <h1 className="text-4xl sm:text-6xl font-bold">
+          <h1 className="text-3xl sm:text-5xl font-bold animate-slideUp text-3d">
             Party Types & Decoration
           </h1>
-          <p className="opacity-90 mt-2">
+          <p className="mt-3 text-purple-300 text-xl animate-slideUp font-bold animate-slideUp text-3d">
             From simple gatherings to luxury celebrations
           </p>
         </div>
       </div>
-      {/* 🎄 CHRISTMAS OFFER SECTION */}
-      <div className="relative py-32 bg-white overflow-hidden border-y-4 border-purple-600">
 
-        {/* Sparkles */}
-        {[...Array(50)].map((_, i) => (
-          <span
-            key={i}
-            className="absolute bg-white rounded-full opacity-40 animate-sparkle"
-            style={{
-              width: Math.random() * 4 + 2,
-              height: Math.random() * 4 + 2,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDuration: `${Math.random() * 3 + 2}s`,
-            }}
-          />
-        ))}
-
-        <div className="relative max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center px-6 z-10">
-
-          {/* LEFT – OFFER INFO */}
-          <div className="text-white text-center lg:text-left">
-            <h1 className="text-5xl sm:text-6xl font-extrabold text-dark">
-              <spin className=" text-black">Christmas</spin>  <span className="text-red-500">Party Offer</span>
-            </h1>
-
-            <div className="inline-block mt-6 bg-red-600 px-10 py-4 rounded-2xl text-3xl font-bold animate-pulse">
-              68% OFF
-            </div>
-
-            <p className="mt-8 text-lg text-black max-w-lg mx-auto lg:mx-0">
-              Book your Christmas party now and enjoy premium decoration, music,
-              lighting & food packages at unbeatable festive prices.
-            </p>
-
-            {/* <ul className="mt-6 space-y-3 text-left max-w-md mx-auto lg:mx-0 text-black">
-        <li>🎶 DJ Music & Dance Floor</li>
-        <li>🎄 Christmas Theme Decoration</li>
-        <li>🍽️ Dinner & Cake Arrangement</li>
-        <li>🎁 Surprise Gifts for Guests</li>
-      </ul> */}
-          </div>
-
-          {/* RIGHT – PARTY BOOKING FORM */}
-          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl">
-            <h2 className="text-3xl font-bold text-black text-center">
-              Book Your Party 🎉
-            </h2>
-
-            <form className="mt-8 space-y-5">
-              <input
-                type="text"
-                placeholder="Full Name"
-                className="w-full px-4 py-3 rounded-xl bg-white/20 text-black  placeholder-black-600 outline-none focus:ring-2 focus:ring-purple-500"
-              />
-
-              <input
-                type="tel"
-                placeholder="Mobile Number"
-                className="w-full px-4 py-3 rounded-xl text-green-800  placeholder-gray-600 outline-none focus:ring-2 focus:ring-purple-500"
-              />
-
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full px-4 py-3 rounded-xl bg-white/20 text-black  placeholder-gray-600 outline-none focus:ring-2 focus:ring-purple-500"
-              />
-
-              <select
-                className="w-full px-4 py-3 rounded-xl bg-white/20   placeholder-gray-600  outline-none focus:ring-2 focus:ring-purple-500"
-              >
-                <option className="placeholder-gray-600 ">Select Party Type</option>
-                <option className="placeholder-gray-600 ">Birthday Party</option>
-                <option className="placeholder-gray-600 ">Christmas Party</option>
-                <option className="placeholder-gray-600 ">Corporate Party</option>
-                <option className="placeholder-gray-600 ">Family Celebration</option>
-              </select>
-
-              <textarea
-                rows="3"
-                placeholder="Your Requirements"
-                className="w-full px-4 py-3 rounded-xl bg-white/20 border pholder-gray-600 outline-none focus:ring-2 focus:ring-purple-500"
-              />
-
-              <button
-                type="submit"
-                className="w-full py-4 bg-purple-600 rounded-xl text-white font-semibold text-lg hover:bg-purple-700 transition"
-              >
-                🎄 Book Christmas Party
-              </button>
-            </form>
-          </div>
-        </div>
-
-        {/* CSS */}
-
+      {/* HEADING */}
+      <div className="text-center max-w-3xl mx-auto mt-12 px-4">
+        <h2 className="text-2xl lg:text-5xl font-bold text-purple-400 animate-topSlide font-bold animate-slideUp text-3d">
+          Farmhouse Collection
+        </h2>
+        <p className="text-gray-600 mt-2">
+          Premium farmhouses for parties, stays & weddings
+        </p>
       </div>
 
+      {/* FILTERS */}
+      <div className="flex flex-wrap justify-center gap-4 mt-8 mb-12">
+        {["All", "Party", "Stay", "Wedding"].map((cat) => (
+          <button
+            key={cat}
+            onClick={() => dispatch(setCategory(cat))}
+            className={`px-6 py-2 rounded-full text-sm border transition-all
+              ${
+                category === cat
+                  ? "bg-black text-white"
+                  : "border-gray-300 hover:bg-black hover:text-white"
+              }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      {/* FARM CARDS */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
+        {filteredFarms.map((farm, index) => (
+          <motion.div
+            key={farm.id}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.15 }}
+            onClick={() => setModalImg(farm.image)}
+            className="cursor-pointer"
+          >
+            <FarmCard farm={farm} />
+          </motion.div>
+        ))}
+      </div>
+
+      {/* IMAGE MODAL */}
+      {modalImg && (
+        <div
+          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+          onClick={() => setModalImg(null)}
+        >
+          <motion.img
+            src={modalImg}
+            className="max-w-[90vw] max-h-[80vh] rounded-xl"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.4 }}
+          />
+        </div>
+      )}
+
+      {/* ANIMATIONS */}
+    <style>{`
+        @keyframes slideLeft {0% {opacity:0; transform:translateX(-50px);} 100% {opacity:1; transform:translateX(0);} }
+        .animate-slideLeft {animation: slideLeft 1s ease forwards;}
+        @keyframes slideRight {0% {opacity:0; transform:translateX(50px);} 100% {opacity:1; transform:translateX(0);} }
+        .animate-slideRight {animation: slideRight 1s ease forwards;}
+        @keyframes slideUp {0% {opacity:0; transform:translateY(40px);} 100% {opacity:1; transform:translateY(0);} }
+        .animate-slideUp {animation: slideUp 1s ease forwards;}
+        @keyframes topSlide {0% {opacity:0; transform:translateY(-40px);} 100% {opacity:1; transform:translateY(0);} }
+        .animate-topSlide {animation: topSlide 1s ease forwards;}
+        @keyframes cardSlide {0% {opacity:0; transform:translateY(30px);} 100% {opacity:1; transform:translateY(0);} }
+        .animate-cardSlide {animation: cardSlide .9s ease forwards;}
+
+        @keyframes textDrift {
+          0%, 100% {transform: translateY(0);} 
+          50% {transform: translateY(-5px);}
+        }
+        .animate-textDrift {animation: textDrift 1.5s ease-in-out infinite;}
+
+        .text-3d {text-shadow:2px 2px 5px rgba(0,0,0,0.9);}
+        .text-3d-strong {text-shadow:3px 3px 8px rgba(0,0,0,1),0px 0px 12px rgba(255,255,255,0.4);}
+      `}</style>
     </div>
   );
 };
 
 export default Party;
-<h> </h>

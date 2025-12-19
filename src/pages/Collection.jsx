@@ -69,11 +69,11 @@ const Collection = () => {
                 transition={{ duration: 1, delay: 0.5 }}
                 className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4"
               >
-                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-3">
+                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-3 text-white tracking-wide animate-topSlide tracking-wide font-semibold text-3d animate-slideUp">
                   Explore Our Premium Farmhouses
                 </h2>
 
-                <p className="text-sm sm:text-lg mb-6 max-w-2xl">
+                <p className="text-sm sm:text-lg mb-6 max-w-2xl text-white tracking-wide animate-topSlide tracking-wide font-semibold text-3d animate-slideUp">
                   Perfect for parties, luxury stays, destination weddings & memorable celebrations
                 </p>
 
@@ -88,70 +88,29 @@ const Collection = () => {
       </Swiper>
     </div>
 
-      {/* Heading */}
-      <div className="text-center max-w-3xl mx-auto mt-12 px-4">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-3 text-black">
-          Farmhouse Collection
-        </h1>
-        <p className="text-gray-600 text-sm sm:text-base">
-          Premium farmhouses for parties, stays & weddings
-        </p>
-      </div>
+      <style>{`
+        @keyframes slideLeft {0% {opacity:0; transform:translateX(-50px);} 100% {opacity:1; transform:translateX(0);} }
+        .animate-slideLeft {animation: slideLeft 1s ease forwards;}
+        @keyframes slideRight {0% {opacity:0; transform:translateX(50px);} 100% {opacity:1; transform:translateX(0);} }
+        .animate-slideRight {animation: slideRight 1s ease forwards;}
+        @keyframes slideUp {0% {opacity:0; transform:translateY(40px);} 100% {opacity:1; transform:translateY(0);} }
+        .animate-slideUp {animation: slideUp 1s ease forwards;}
+        @keyframes topSlide {0% {opacity:0; transform:translateY(-40px);} 100% {opacity:1; transform:translateY(0);} }
+        .animate-topSlide {animation: topSlide 1s ease forwards;}
+        @keyframes cardSlide {0% {opacity:0; transform:translateY(30px);} 100% {opacity:1; transform:translateY(0);} }
+        .animate-cardSlide {animation: cardSlide .9s ease forwards;}
 
-      {/* Filters */}
-      <div className="flex flex-wrap justify-center gap-3 mb-12 mt-6">
-        {["All", "Party", "Stay", "Wedding"].map((cat) => (
-          <button
-            key={cat}
-            onClick={() => dispatch(setCategory(cat))}
-            className={`px-6 py-2 rounded-full text-sm border transition-all
-              ${
-                category === cat
-                  ? "bg-black text-white"
-                  : "border-gray-300 text-black hover:bg-black hover:text-white"
-              }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
+        @keyframes textDrift {
+          0%, 100% {transform: translateY(0);} 
+          50% {transform: translateY(-5px);}
+        }
+        .animate-textDrift {animation: textDrift 1.5s ease-in-out infinite;}
 
-      {/* Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
-        {filteredFarms.map((farm, index) => (
-          <motion.div
-            key={farm.id}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2, duration: 0.8 }}
-          >
-            <div
-              className="cursor-pointer"
-              onClick={() => setModalImg(farm.image)}
-            >
-              <FarmCard farm={farm} />
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Modal */}
-      {modalImg && (
-        <div
-          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
-          onClick={() => setModalImg(null)}
-        >
-          <motion.img
-            src={modalImg}
-            alt="full-view"
-            className="max-h-[80vh] max-w-[90vw] rounded-xl"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          />
-        </div>
-      )}
+        .text-3d {text-shadow:2px 2px 5px rgba(0,0,0,0.9);}
+        .text-3d-strong {text-shadow:3px 3px 8px rgba(0,0,0,1),0px 0px 12px rgba(255,255,255,0.4);}
+      `}</style>
     </section>
+    
   );
 };
 
