@@ -93,35 +93,37 @@ const ContactPage = () => {
           <GlassCard
             icon={<HiMail />}
             title="Email"
-            value="info@business.com"
+            value="pankhuri.maverick123@gmail.com
+"
             gradient="from-blue-500 to-cyan-500"
           />
 
           <GlassCard
             icon={<HiPhone />}
             title="Contact Number"
-            value="+91 12345 67890"
+            value="+91 9711902626"
             gradient="from-indigo-500 to-violet-500"
           />
 
           <GlassCard
             icon={<FaWhatsapp />}
             title="WhatsApp"
-            value="+91 12345 67890"
+            value="+91 9711902626"
             gradient="from-green-500 to-emerald-500"
           />
 
           <GlassCard
             icon={<FaInstagram />}
             title="Instagram"
-            value="@business"
+            value="goyard_g_farms
+"
             gradient="from-pink-500 to-rose-500"
           />
 
           <GlassCard
             icon={<HiLocationMarker />}
             title="Address"
-            value="Sector 126, Noida, Uttar Pradesh"
+            value="Sector 131, Noida, Uttar Pradesh"
             gradient="from-red-500 to-orange-500"
           />
 

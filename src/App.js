@@ -40,3 +40,12 @@ function App() {
 }
 
 export default App;
+
+// instagram
+// pass yamuna%greens$xyz
+// pankhuri.maverick123@gmail.com
+
+// hostinger 
+// Pankhuri.Maverick123@gmail.com
+// Pass maverick@1987
+

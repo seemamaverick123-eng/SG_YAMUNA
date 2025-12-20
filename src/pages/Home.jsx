@@ -22,7 +22,29 @@ import { FaBed, FaCouch, FaWifi, FaParking, FaSwimmingPool, FaVideo, FaBolt, FaS
 import { MdOutlineWaterDrop, MdOutlineCelebration } from "react-icons/md";
 import "../FlipCard.css";
 // import Footer from "../components/Footer";
-
+const services = [
+  {
+    title: "DJ Services",
+    description: "On-demand professional DJs for parties and weddings.",
+    icon: "🎵",
+  },
+  {
+    title: "Decor & Setup",
+    description: "Luxury themed decor and complete event arrangements.",
+    icon: "🎉",
+  },
+  {
+    title: "Full Catering",
+    description: "Customized menus for 300+ guests with premium options.",
+    icon: "🍽️",
+  },
+  {
+    title: "Event Management",
+    description:
+      "Complete planning and execution to make your event unforgettable.",
+    icon: "📋",
+  },
+];
 // SlideOnScroll component
 const SlideOnScroll = ({ children, direction = "up", delay = 0 }) => {
   const ref = useRef();
@@ -85,16 +107,16 @@ const Home = () => {
   }, []);
 
   const cards = [
-    { title: "Grand Weddings", img: front1, back: "Goyard greens Farms suitable for 300+ guests, luxury arrangements, open garden décor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc." },
-    { title: "Grand Weddings", img: front2, back: "Goyard greens Farms suitable for 300+ guests, luxury arrangements, open garden décor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc.." },
+    { title: "Farmhouse", img: front1, back: "Goyard greens Farms suitable for 300+ guests, luxury arrangements, open garden décor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc." },
+    { title: "Grand Weddings", img: front2, back: "Suitable for 300+ guestsLuxury arrangements & premium setupsExpansive open garden décorPerfect for weddings, private parties & corporate events Surrounded by lush greenery and open spaces, Goyard Greens offers a serene yet luxurious setting where nature meets sophistication." },
     { title: "Birthday Parties", img: front3, back: "Kids & adult birthday themes, music setup, decoration, and open area celebration. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc." },
-    { title: "Grand Weddings", img: front4, back: "Goyard greens Farms suitable for 300+ guests, luxury arrangements, open garden décor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc." },
-    { title: "Grand Weddings", img: front5, back: "Goyard greens Farms suitable for 300+ guests, luxury arrangements, open garden décor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc." },
-    { title: "Birthday Parties", img: front6, back: "Kids & adult birthday themes, music setup, decoration, and open area celebration. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Donec mattis, libero ut ullamcorper placerat, ligula nisl tristique nunc." },
+    { title: "Party", img: front4, back: "“Celebrate under the stars 🌟 in our open garden.Luxury-themed decor and ambient lighting.Perfect for 300+ guests and grand parties!”." },
+    { title: "Garden Area", img: front5, back: "✨ Luxury & Event Experience“Full event management and premium catering 🍽️Themed setups for weddings and private eventsUnforgettable celebrations at Goyard Greens Farmhouse!”." },
+    { title: "Bed Room", img: front6, back: "🛏️ Bedrooms“Relax in our cozy, luxurious bedrooms 🛏️Spacious suites with modern furnishings.Enjoy serene views of the gardens & Yamuna River.”" },
   ];
 
   const testimonials = [
-    { name: "Amit Sharma", role: "CEO, Sharma Enterprises", img: client1, quote: "Goyard greens Farms transformed our wedding into a magical experience — the venue, décor, and hospitality exceeded all expectations. Guests couldn’t stop praising the ambience and service." },
+    { name: "Amit Sharma", role: "CEO, Sharma Enterprises", img: client1, quote: "Goyard greens Farms transformed our wedding into a magical experience — the venue, décor, and hospitality exceeded all expectations. Guests couldn’t stop praising the ambience and servic." },
     { name: "Priya Singh", role: "Marketing Head, Bright Events", img: client2, quote: "From engagement parties to birthday celebrations, the team handled everything with professionalism and care. The open‑garden décor and lighting made our event truly memorable." },
     { name: "Rohan Verma", role: "Freelancer", img: client3, quote: "Impeccable arrangements and warm hospitality. The food, lighting and overall vibe made our family function feel luxurious yet comfortable. Highly recommend for any celebration." },
   ];
@@ -111,7 +133,7 @@ const Home = () => {
     { icon: <MdOutlineWaterDrop />, title: "Water Supply", desc: "Fresh water available 24×7." },
     { icon: <FaLeaf />, title: "Garden", desc: "Green & peaceful outdoor area." },
     { icon: <MdOutlineCelebration />, title: "Party Space", desc: "Outdoor sitting for events." },
-    { icon: <FaPaintBrush />, title: "Decoration Gallery", desc: "Themes available for events." },
+    { icon: <FaPaintBrush />, title: "Bar", desc: "Bar for All Events." },
     { icon: <FaWifi />, title: "High-Speed WiFi", desc: "Fast & stable internet access." },
     { icon: <FaVolumeUp />, title: "Sound System", desc: "Bluetooth speakers & audio setup." }
   ];
@@ -152,7 +174,33 @@ const Home = () => {
         </div> */}
 
       </div>
+  <section className="bg-gray-50 py-16">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-5xl font-bold mb-4 text-gray-800  font-extrabold mb-3 text-3d-strong animate-slideRight leading-tight">
+          We Also Organize <span className="text-red-700">On-Demand</span>
+        </h2>
+        <p className="text-gray-600 max-w-2xl mx-auto mb-12">
+          We offer on-demand DJ, luxury decor, full event catering, and complete event
+          management to make your celebration at Goyard Greens Farmhouse truly
+          unforgettable.
+        </p>
 
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-xl p-6 hover:shadow-2xl transition duration-300"
+            >
+              <div className="text-5xl mb-4">{service.icon}</div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                {service.title}
+              </h3>
+              <p className="text-gray-600">{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
       {/* Nearby Attractions */}
       <section className="py-14 px-4 md:px-10 lg:px-20 bg-gray-50">
         <SlideOnScroll>
