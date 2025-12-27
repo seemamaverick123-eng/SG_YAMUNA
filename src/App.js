@@ -45,7 +45,9 @@ export default App;
 // pass yamuna%greens$xyz
 // pankhuri.maverick123@gmail.com
 
-// hostinger 
+// hostinger for website
 // Pankhuri.Maverick123@gmail.com
 // Pass maverick@1987
+
+// EMAIL goyardgreens@gmail.com   Pass-GG!yamuna$00
 
